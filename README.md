@@ -1,2 +1,2 @@
 # Go-BinTree-gen
-Bin Tree Go implementation using generics
+Bin Tree implementation in Go (GoLang) using generics
