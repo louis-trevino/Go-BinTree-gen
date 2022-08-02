@@ -75,9 +75,7 @@ func (bt *BinTree[T]) InorderNode(iNode *BinNode[T], sb *string) {
 		if len(*sb) == 0 {
 			sep = ""
 		}
-		//var fmtData string = iNode.Data.GeStringValue()
-		var fmtData string = fmt.Sprintf("%.2f", iNode.Data)
-		// fmt.Printf("+ %s \n", fmtData)
+		var fmtData string = fmt.Sprintf("%v", iNode.Data)
 		*sb = fmt.Sprintf("%s%s%s", *sb, sep, fmtData)
 		bt.InorderNode(iNode.Right, sb)
 	}
@@ -85,7 +83,8 @@ func (bt *BinTree[T]) InorderNode(iNode *BinNode[T], sb *string) {
 
 func (bt *BinTree[T]) SearchNode(data T, iNode *BinNode[T]) *BinNode[T] {
 	if iNode == nil {
-		iNode = bt.Root
+		fmt.Println("iNode should be populated.")
+		return nil
 	}
 	if data == iNode.Data {
 		return iNode
